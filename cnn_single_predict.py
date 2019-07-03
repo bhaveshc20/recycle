@@ -10,8 +10,7 @@ def prediction():
     test_image = np.expand_dims(test_image, axis = 0)
     result = classifier.predict(test_image)
     pred = {'class' : 'D'}
-    #0 is Organic
-    #1 is Recyclable (Non Organic)
+    
     if result[0][0] == 1:
         pred['class'] = 'Recyclable'
     else:
